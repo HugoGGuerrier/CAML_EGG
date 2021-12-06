@@ -2,14 +2,14 @@
 
 Author : Hugo GUERRIER \
 License : MIT \
-Verison : 0.1a \
+Verison : 0.1a 
 
 ## Dependencies
 
 Binaries that are mandatory to run this project
 
 - opam : [The ocaml package manager](https://opam.ocaml.org/)
-- ocaml >= 4.13.1 [The OCaml lang](https://ocaml.org/index.fr.html)
+- ocaml >= 4.13.1 : [The OCaml lang](https://ocaml.org/index.fr.html)
 - dune : [The OCaml building tool](https://github.com/ocaml/dune)
 
 There are also some ocaml dependencies
