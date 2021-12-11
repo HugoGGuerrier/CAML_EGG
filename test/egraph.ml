@@ -1,3 +1,5 @@
+(* Test function for the egg implementation memory manipulation *)
+
 open Camlegg ;;
 
 let test_creation () =

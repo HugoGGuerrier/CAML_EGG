@@ -35,8 +35,3 @@ type e_graph = {
 (* Create a new e graph and return the reference of the created structure *)
 let create_e_graph () : e_graph ref =
     ref {id_cpt = 0; m = EClassIdMap.empty}
-
-(* Get an E Class by its id *)
-let get_e_class (graph : e_graph ref) (id : e_class_id) : e_class =
-    let real_id = UnionFind.make id in
-    EClassIdMap.find (UnionFind.get (UnionFind.find real_id)) !graph.m
