@@ -26,3 +26,23 @@ Les tâches suivantes ont été effectués
 
 L'avancement sur l'implémentation des algorithmes n'est pas significative cette semaine, mais j'ai pris le temps de réfléchir sur la meilleure manière d'implémenter les e-graph pour que ce soit à la fois simple à comprendre et relire et simple à utiliser.
 De plus, j'ai passé pas mal de temps à envisager et revoir la mutabilité des structures que j'ai créé pour que ce soit plus simple à manipuler
+
+## Semaine du 03 Jav 2022
+
+Découverte d'un problème sur la manipulation des E-Gaph lors de vacances de Noël. La description du problème est comme suit :
+
+- La structure union-find au sein de la structure `e_graph` (dans le fichier `camlegg.ml`) sert à maintenir les équivalences entre les identifiants d'E-Class
+- Dans le fichier de test `uf.ml`, on test que cette structure union-find se comporte de la manière souhaité, et les test passent sans souci
+- Cependant, dans le fichier de test `egraph.ml` où l'on test l'implémentation des E-Graph, la création d'équivalence ne fonctionne plus 
+- Le problème survient dans la méthode `test_e_class_id_union` si on décommente les lignes 43 et 44
+- Comme vous pouvez le voir, ce test fait appel au fonctions `ec_id_union` et `ec_id_get` étant définies dans le fichier `camlegg.ml`
+- Ces fonctions sont censées modifier le store à l'interieur de E-Graph, mais pour une raison inconnu, elle n'y arrivent pas
+- Avec des affichages de débug, c'est visiblement la fonction `ec_id_union` qui n'arrive pas a créer l'union entre les deux identifiant passé en paramètre
+
+La solution au problème a été trouvé, il suffit de chager d'implémentation de UnionFind. Je ne passe plus par le foncteur désomais car celui-ci ne semble pas posséder d'implementation complète pour l'instant
+
+## Semaine du 10 Jav 2022
+
+Réimplémentation des E Class ID pour faire fonction la structure Union Find + Ecriture de nombreux tests et de nouvelles fonctions utilitaires pour tester tout cela
+Découverte d'un nouveau bug sur la map censée stocker la relation entre E-Class ID et E-Class...
+Je vais essayer de le corriger dans le week-end, mais cela me semble compromis, étant donné que je n'arrive même pas à afficher une map...
