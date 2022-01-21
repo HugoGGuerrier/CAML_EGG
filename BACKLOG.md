@@ -46,3 +46,14 @@ La solution au problème a été trouvé, il suffit de chager d'implémentation 
 Réimplémentation des E Class ID pour faire fonction la structure Union Find + Ecriture de nombreux tests et de nouvelles fonctions utilitaires pour tester tout cela
 Découverte d'un nouveau bug sur la map censée stocker la relation entre E-Class ID et E-Class...
 Je vais essayer de le corriger dans le week-end, mais cela me semble compromis, étant donné que je n'arrive même pas à afficher une map...
+
+## Semaine du 17 Jav 2022
+
+Correction du problème dans la map du E-Graph grâce à un retour à la représentation des identifiants de E-Class comme des entiers. Tous les tests passent maintenant.
+
+Le travaille qui a été effectué cette semaine : 
+- Ajout des fonctions de canonnisation pour les E-Class et les E-Node
+- Ajout des fonctions de comparaisons entres les E-Class et les E-Node, ces fonctions permettront de simplifier les tests lors de l'implémentation de CAML_EGG
+- Ajout de tests unitiares pour chaquue nouvelle fonction crée
+
+Besoin d'explicitation pour la notion de congruence

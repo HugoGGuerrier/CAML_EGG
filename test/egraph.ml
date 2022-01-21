@@ -29,8 +29,12 @@ let test_e_class_id_union () =
 
     Alcotest.(check int) "Test e class id" 0 (UnionFind.get (e_class_canon !ec1.id)) ;
     Alcotest.(check int) "Test e class id" 0 (UnionFind.get (e_class_canon !ec2.id)) ;
+    Alcotest.(check bool) "Test e class eq" true (e_class_eq ec1 ec2) ;
     Alcotest.(check int) "Test e class id" 2 (UnionFind.get (e_class_canon !ec3.id)) ;
     Alcotest.(check int) "Test e class id" 2 (UnionFind.get (e_class_canon !ec4.id)) ;
+    Alcotest.(check bool) "Test e class eq" true (e_class_eq ec4 ec3) ;
+    Alcotest.(check bool) "Test e class eq" false (e_class_eq ec1 ec3) ;
+    Alcotest.(check bool) "Test e class eq" false (e_class_eq ec4 ec2) ;
 
     let _ = e_class_union !ec1.id !ec3.id in
 
@@ -38,6 +42,7 @@ let test_e_class_id_union () =
     Alcotest.(check int) "Test e class id" 0 (UnionFind.get (e_class_canon !ec2.id)) ;
     Alcotest.(check int) "Test e class id" 0 (UnionFind.get (e_class_canon !ec3.id)) ;
     Alcotest.(check int) "Test e class id" 0 (UnionFind.get (e_class_canon !ec4.id)) ;
+    Alcotest.(check bool) "Test e class eq" true (e_class_eq ec4 ec1) ;
 
     Alcotest.(check bool) "Test base map" false (EClassIdMap.is_empty !g.map) ;
 
@@ -45,7 +50,11 @@ let test_e_class_id_union () =
 
     Alcotest.(check int) "Test e class id" 0 (UnionFind.get !test_ec.id)
 
+let test_e_node () =
+    ()
+
 let test () =
     test_creation () ;
     test_e_class_creation () ;
-    test_e_class_id_union ()
+    test_e_class_id_union () ;
+    test_e_node ()
