@@ -57,3 +57,8 @@ Le travaille qui a été effectué cette semaine :
 - Ajout de tests unitiares pour chaquue nouvelle fonction crée
 
 Besoin d'explicitation pour la notion de congruence
+
+## Semaine du 24 Jav 2022
+
+Recherches pour le problème de Hashcons dans les outils déjà développé pour OCaml [ocaml-hashcons](https://github.com/backtracking/ocaml-hashcons)
+Problème lors de l'installation de cette bibliothèque à l'aide d'Opam ; Pour reproduire l'erreur : `opam install hashcons` cela donne un échec de compilation du module `conf-autoconf 0.1`
