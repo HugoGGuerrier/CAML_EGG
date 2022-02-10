@@ -2,7 +2,7 @@
 
 Author : Hugo GUERRIER \
 License : MIT \
-Verison : 0.1a 
+Verison : 0.3a 
 
 ## Dependencies
 
@@ -16,7 +16,6 @@ There are also some ocaml dependencies
 
 - alcotest : [The unit test lib](https://github.com/mirage/alcotest)
 - unionFind [The INRIA union find ocaml lib](https://gitlab.inria.fr/fpottier/unionfind)
-- hashcons [An implementation of the hashcons structure in OCaml](https://github.com/backtracking/ocaml-hashcons)
 
 ## Installation
 

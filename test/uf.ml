@@ -1,4 +1,4 @@
-(* Test the suite availablity *)
+(* Test the union find implementation *)
 let test_creation () = 
     let v1 = UnionFind.make 5 in
     let v2 = UnionFind.make 5 in

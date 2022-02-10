@@ -3,9 +3,10 @@
 open Camlegg
 
 let test_creation () =
-    let {id_cpt = id ; map = m} = (!(create_e_graph ())) in
+    let {id_cpt = id ; map = m ; hc = hc} = (!(create_e_graph ())) in
     Alcotest.(check int) "Test base id" 0 id ;
-    Alcotest.(check bool) "Test base map" true (EClassIdMap.is_empty m)
+    Alcotest.(check bool) "Test base map" true (EClassIdMap.is_empty m) ;
+    Alcotest.(check bool) "Test base hashcons" true (Hashcons.is_empty hc)
 
 let test_e_class_creation () =
     let g = create_e_graph () in
@@ -50,11 +51,7 @@ let test_e_class_id_union () =
 
     Alcotest.(check int) "Test e class id" 0 (UnionFind.get !test_ec.id)
 
-let test_e_node () =
-    ()
-
 let test () =
     test_creation () ;
     test_e_class_creation () ;
-    test_e_class_id_union () ;
-    test_e_node ()
+    test_e_class_id_union ()
