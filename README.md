@@ -2,7 +2,7 @@
 
 Author : Hugo GUERRIER \
 License : MIT \
-Verison : 0.3a 
+Verison : 0.4a 
 
 ## Dependencies
 
